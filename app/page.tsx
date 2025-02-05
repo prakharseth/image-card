@@ -1,4 +1,3 @@
-import { ImageCard } from "@/components/image-card"
 import { ProfileCard } from "@/components/profile-card"
 import { HoverProfileCard } from "@/components/hover-profile-card"
 
@@ -20,7 +19,6 @@ export default function Home() {
             profession="Makeup Artist"
             description="Expert in designing unique, gorgeous makeup looks."
           />
-          {/* Add more ImageCard components here */}
         </div>
       </div>
     </main>

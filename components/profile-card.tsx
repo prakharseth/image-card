@@ -34,12 +34,13 @@ export function ProfileCard({ imageSrc, name, profession, description }: Profile
             <div className={`transition-all duration-300 ${isExpanded ? '-translate-y-4' : ''}`}>
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <h3 className="text-white text-xl font-semibold">{name}</h3>
-                  <p className="text-white/80 text-sm">{profession}</p>
+                  <h3 className="text-white text-xl font-semibold drop-shadow-sm">{name}</h3>
+                  <p className="text-white/90 text-sm drop-shadow-sm">{profession}</p>
                 </div>
                 <button 
                   onClick={() => setIsExpanded(!isExpanded)}
                   className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center transition-all hover:bg-white/20"
+                  aria-label={isExpanded ? "Show less" : "Show more"}
                 >
                   <svg 
                     className={`w-4 h-4 text-white transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
@@ -57,19 +58,31 @@ export function ProfileCard({ imageSrc, name, profession, description }: Profile
               <div 
                 className={`overflow-hidden transition-all duration-300 ${
                   isExpanded 
-                    ? 'max-h-[120px] opacity-100 mt-2' 
+                    ? 'max-h-[120px] opacity-100 mt-3' 
                     : 'max-h-0 opacity-0'
                 }`}
               >
-                <p className="text-white/90 text-sm mb-3">{description}</p>
-                <div className="flex gap-3">
-                  <a href="#" className="text-white/80 hover:text-white transition-colors">
+                <p className="text-white/90 text-sm mb-3 leading-relaxed">{description}</p>
+                <div className="flex gap-4">
+                  <a 
+                    href="#" 
+                    className="text-white/80 hover:text-white transition-colors"
+                    aria-label="LinkedIn Profile"
+                  >
                     <Linkedin className="h-5 w-5" />
                   </a>
-                  <a href="#" className="text-white/80 hover:text-white transition-colors">
+                  <a 
+                    href="#" 
+                    className="text-white/80 hover:text-white transition-colors"
+                    aria-label="Twitter Profile"
+                  >
                     <Twitter className="h-5 w-5" />
                   </a>
-                  <a href="#" className="text-white/80 hover:text-white transition-colors">
+                  <a 
+                    href="#" 
+                    className="text-white/80 hover:text-white transition-colors"
+                    aria-label="Website"
+                  >
                     <Globe className="h-5 w-5" />
                   </a>
                 </div>
